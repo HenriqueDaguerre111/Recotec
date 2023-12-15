@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+body, html {
+    
+    margin: 0;
+    overflow-y: auto; 
+}
 header {
     background-color: #333;
     padding: 10px;
@@ -95,6 +100,8 @@ body {
     background-color: #fff;
 }
 
+/* Adicione os estilos originais aqui */
+
 .recotec {
     display: flex;
     justify-content: space-between;
@@ -105,6 +112,7 @@ body {
     width: 100%;
     height: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 .recotec-text {
@@ -182,8 +190,45 @@ body {
     font-size: .7rem;
     font-weight: 700;
     text-transform: uppercase;
+    display: block; /* Certifique-se de que os botões são exibidos como blocos, ocupando toda a largura do contêiner pai */
+    padding: 8px; /* Adicione algum preenchimento para tornar os botões mais visíveis */
+    margin-top: 10px; /* Adicione algum espaçamento superior para separar os botões */
 }
 
 .card .content .btn-link:hover {
     border-bottom: 1px solid #1d8122;
+    text-decoration: none; /* Evite que o sublinhado adicional apareça no hover */
 }
+
+
+/* Adicione a media query para ajustar o layout em telas menores, como celulares */
+/* Restante do seu código CSS */
+
+/* Adicione a media query para ajustar o layout em telas menores, como celulares */
+@media (max-width: 767px) {
+    .recotec {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* height: 100%; Remova ou comente esta linha */
+        overflow-y: auto; /* Adicione esta propriedade para permitir rolagem em telas menores */
+        height: 1200px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .card .content a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #1d8122;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+}
+
